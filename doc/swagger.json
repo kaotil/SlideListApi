@@ -1,0 +1,95 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "SlideListApi",
+        "description": "slide list on kaotil.com"
+    },
+    "schemes": [
+        "https"
+    ],
+    "host": "api.kaotil.com",
+    "basePath": "/v1",
+    "paths": {
+        "/slide": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Echo GET"
+                    }
+                }
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "in": "body",
+                        "description": "The slide_list JSON you want to post",
+                        "schema": {
+                            "$ref": "#/definitions/SlideList"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Echo POST"
+                    }
+                }
+            },
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Echo PUT"
+                    }
+                }
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Echo DELETE"
+                    }
+                }
+            }
+        },
+        "/slide/{num}": {
+            "parameters": [
+                {
+                    "name": "num",
+                    "in": "path",
+                    "description": "num",
+                    "type": "string",
+                    "required": true
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Echo slide num"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "SlideList": {
+            "type": "object",
+            "properties": {
+                "env": {
+                    "type": "string"
+                },
+                "num": {
+                    "type": "integer"
+                },
+                "date": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
