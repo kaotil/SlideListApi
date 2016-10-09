@@ -3,7 +3,7 @@
     "info": {
         "version": "1.0.0",
         "title": "SlideListApi",
-        "description": "slide list on kaotil.com"
+        "description": "slide list on kaotil.com\n\n#### staging API URL\n```\n  https://api.kaotil.com/stg/\n```\n#### production API URL\n```\n  https://api.kaotil.com/v1/\n```\n\n### JSON body sample\n#### /slide POST\n```json\n{\n    \"item\": {\n        \"env\": \"stg\",\n        \"num\": 1,\n        \"date\": \"2016/01/01\",\n        \"title\": \"test\",\n        \"description\": \"test\"\n    }\n}\n```\n#### /slide PUT\n```json\n{\n    \"key\": {\n        \"env\": \"stg\",\n        \"num\": 1\n    },\n    \"item\": {\n        \"date\": \"2016/01/01\",\n        \"title\": \"test\",\n        \"description\": \"test\"\n    }\n}\n```\n#### /slide DELETE\n```json\n{\n    \"key\": {\n        \"env\": \"stg\",\n        \"num\": 1\n    }\n}\n```\n"
     },
     "schemes": [
         "https"
@@ -20,12 +20,16 @@
                 }
             },
             "post": {
+                "produces": [
+                    "application/json"
+                ],
                 "parameters": [
                     {
+                        "name": "slide_list",
                         "in": "body",
                         "description": "The slide_list JSON you want to post",
                         "schema": {
-                            "$ref": "#/definitions/SlideList"
+                            "$ref": "#/definitions/slide_list"
                         },
                         "required": true
                     }
@@ -37,6 +41,9 @@
                 }
             },
             "put": {
+                "produces": [
+                    "application/json"
+                ],
                 "responses": {
                     "200": {
                         "description": "Echo PUT"
@@ -44,6 +51,9 @@
                 }
             },
             "delete": {
+                "produces": [
+                    "application/json"
+                ],
                 "responses": {
                     "200": {
                         "description": "Echo DELETE"
@@ -71,7 +81,7 @@
         }
     },
     "definitions": {
-        "SlideList": {
+        "slide_list": {
             "type": "object",
             "properties": {
                 "env": {

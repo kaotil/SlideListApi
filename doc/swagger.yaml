@@ -2,7 +2,55 @@ swagger: '2.0'
 info:
   version: 1.0.0
   title: SlideListApi
-  description: slide list on kaotil.com
+  description: |
+    slide list on kaotil.com
+    
+    #### staging API URL
+    ```
+      https://api.kaotil.com/stg/
+    ```
+    #### production API URL
+    ```
+      https://api.kaotil.com/v1/
+    ```
+    
+    ### JSON body sample
+    #### /slide POST
+    ```json
+    {
+        "item": {
+            "env": "stg",
+            "num": 1,
+            "date": "2016/01/01",
+            "title": "test",
+            "description": "test"
+        }
+    }
+    ```
+    #### /slide PUT
+    ```json
+    {
+        "key": {
+            "env": "stg",
+            "num": 1
+        },
+        "item": {
+            "date": "2016/01/01",
+            "title": "test",
+            "description": "test"
+        }
+    }
+    ```
+    #### /slide DELETE
+    ```json
+    {
+        "key": {
+            "env": "stg",
+            "num": 1
+        }
+    }
+    ```
+
 schemes:
   - https
 host: api.kaotil.com
@@ -14,6 +62,8 @@ paths:
         '200':
           description: Echo GET
     post:
+      produces:
+        - application/json
       parameters:
         - name: slide_list
           in: body
@@ -25,10 +75,14 @@ paths:
         '200':
           description: Echo POST
     put:
+      produces:
+        - application/json
       responses:
         '200':
           description: Echo PUT
     delete:
+      produces:
+        - application/json
       responses:
         '200':
           description: Echo DELETE
