@@ -20,7 +20,7 @@ curl -X GET https://api.kaotil.com/v1/slide/1
 
 #### POST
 ```
-curl -H "x-api-key: XXXXXXXXX" -X POST -d '{ "item": { "env": "prd", "num": 1, "date": "2016/01/01", "title": "test", "description": "test" } }' https://api.kaotil.com/stg/slide
+curl -H "x-api-key: XXXXXXXXX" -X POST -d '{ "item": { "env": "prd", "num": 1, "date": "2016/01/01", "title": "test", "description": "test" } }' https://api.kaotil.com/prd/slide
 
 - data json
 { 
@@ -36,7 +36,7 @@ curl -H "x-api-key: XXXXXXXXX" -X POST -d '{ "item": { "env": "prd", "num": 1, "
 
 #### PUT
 ```
-curl -H "x-api-key: XXXXXXXXX" -X PUT -d '{ "key": {"env": "prd", "num": 1}, "item": { "date": "2016/01/01", "title": "test1", "description": "test1" } }' https://api.kaotil.com/stg/slide
+curl -H "x-api-key: XXXXXXXXX" -X PUT -d '{ "key": {"env": "prd", "num": 1}, "item": { "date": "2016/01/01", "title": "test1", "description": "test1" } }' https://api.kaotil.com/prd/slide
 
 - data json
 { 
@@ -54,7 +54,7 @@ curl -H "x-api-key: XXXXXXXXX" -X PUT -d '{ "key": {"env": "prd", "num": 1}, "it
 
 #### DELETE
 ```
-curl -H "x-api-key: XXXXXXXXX" -X DELETE -d '{ "key": {"env": "prd", "num": 1} }' https://api.kaotil.com/stg/slide
+curl -H "x-api-key: XXXXXXXXX" -X DELETE -d '{ "key": {"env": "prd", "num": 1} }' https://api.kaotil.com/prd/slide
 
 - data json
 { 
